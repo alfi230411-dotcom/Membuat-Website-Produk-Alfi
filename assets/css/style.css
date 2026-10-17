@@ -1,0 +1,395 @@
+/* 1. RESET & DASAR */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333333;
+    line-height: 1.6;
+    background-color: #ffffff;
+}
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-center { text-align: center; }
+.text-white { color: #ffffff !important; }
+/* 2. STICKY NAVBAR DENGAN LOGO 1:1 */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #0f172a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.brand-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Kunci Logo 1:1 */
+.brand-logo {
+    width: 44px;
+    height: 44px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.brand-name {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #38bdf8;
+}
+
+.btn-nav {
+    background-color: #2563eb;
+    color: #ffffff !important;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* 3. SECTION 1: PURE CSS CAROUSEL DENGAN SCROLL-SNAP */
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    background-color: #000000;
+}
+
+.carousel-slide {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.carousel-slide::-webkit-scrollbar {
+    height: 6px;
+}
+
+.carousel-slide::-webkit-scrollbar-thumb {
+    background: #38bdf8;
+    border-radius: 4px;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 30px;
+    left: 40px;
+    background: rgba(15, 23, 42, 0.75);
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* 4. SECTION UMUM */
+.section { padding: 60px 0; }
+.section-bg { background-color: #f8fafc; }
+
+.section-title {
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 35px;
+    color: #0f172a;
+}
+
+/* 5. SECTION 2: PRODUK TERLARIS */
+.bestseller-card {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.bestseller-img {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.badge {
+    background: #fef08a;
+    color: #854d0e;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2563eb;
+    margin: 3px 0;
+}
+
+/* 6. SECTION 3: GALERI PRODUK */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.gallery-card {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.gallery-card:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-card h4 {
+    padding: 15px;
+    text-align: center;
+    color: #0f172a;
+}
+
+/* 7. SECTION 4: ARTIKEL PRESTASI */
+.articles-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.article-card {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.article-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.article-body {
+    padding: 20px;
+}
+
+.article-date {
+    font-size: 12px;
+    color: #64748b;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.article-body h3 {
+    font-size: 18px;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.article-body p {
+    font-size: 14px;
+    color: #475569;
+}
+
+/* 8. SECTION 5: CARA MEMBELI */
+.section-order {
+    padding: 60px 0;
+    background-color: #0f172a;
+    color: #ffffff;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin: 40px 0;
+}
+
+.step-box {
+    padding: 25px;
+    background: #1e293b;
+    border-radius: 10px;
+    border: 1px solid #334155;
+}
+
+.step-num {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background: #2563eb;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.btn-whatsapp,
+.btn-marketplace {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 6px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-whatsapp {
+    background-color: #25d366;
+}
+
+.btn-marketplace {
+    background-color: #ea580c;
+}
+
+.btn-whatsapp:hover,
+.btn-marketplace:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
+/* 9. FOOTER */
+.footer {
+    background-color: #020617;
+    color: #94a3b8;
+    padding: 25px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+
+/* 10. RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .carousel-item img {
+        height: 280px;
+    }
+
+    .carousel-caption {
+        left: 15px;
+        bottom: 15px;
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+
+    .bestseller-card {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .bestseller-img {
+        width: 100%;
+        height: auto;
+        max-width: 320px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .articles-wrapper,
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
+}

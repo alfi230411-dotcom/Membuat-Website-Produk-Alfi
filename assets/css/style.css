@@ -93,7 +93,8 @@ body {
 
 .carousel-slide {
     display: flex;
-    overflow-x: auto;
+    width: 100%;
+    overflow-x: hidden;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
@@ -110,6 +111,7 @@ body {
 
 .carousel-item {
     flex: 0 0 100%;
+    min-width: 100%;
     scroll-snap-align: start;
     position: relative;
 }

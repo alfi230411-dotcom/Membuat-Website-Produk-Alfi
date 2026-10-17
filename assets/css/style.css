@@ -121,6 +121,14 @@ body {
     display: block;
 }
 
+@media (max-widht: 768px) {
+    .carousel-item img {
+        height: auto;
+        max-height: 350px;
+        object-fit: contain;
+    }
+}
+
 .carousel-caption {
     position: absolute;
     bottom: 30px;
@@ -354,7 +362,10 @@ body {
     }
 
     .carousel-item img {
-        height: 280px;
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        display: block;
     }
 
     .carousel-caption {
